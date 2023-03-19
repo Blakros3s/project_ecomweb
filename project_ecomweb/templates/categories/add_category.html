@@ -1,25 +1,25 @@
 {% extends "layouts/master.html" %}
 
 {% block title %}
-    Product | ADD
+    Category | ADD
 {% endblock title %}
 
 {% block content %}
     <div class="container">
-        <h1>This is product Add Page</h1>
+        <h1>Product Category</h1>
         <hr>
         <!-- breadcrump -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
               <li class="breadcrumb-item"><a href="{% url 'list-product' %}">Products</a></li>
-              <li class="breadcrumb-item active">Add</li>
+              <li class="breadcrumb-item active">Add Category</li>
             </ol>
         </nav>
 
         <!-- content -->
         <div class="card p-5">
-            <form action="{% url 'add-product' %}" method="post">
+            <form action="{% url 'add-category' %}" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <input type="submit" value="ADD" class="btn btn-primary col-12">
