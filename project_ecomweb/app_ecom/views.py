@@ -44,4 +44,21 @@ def product_add(request):
     return render(request, 'products/product_add.html', context)
 
 def product_index(request):
-    return render(request, 'products/product_index.html')
+    products = Product.objects.all()
+    context = {"data": products}
+    return render(request, 'products/product_index.html', context)
+
+def product_view(request, id):
+    product = Product.objects.get(id=id)
+    context = {"data": product}
+    return render(request, 'products/product_view.html', context)
+
+def product_edit(request, id):
+    product = Product.objects.get(id=id)
+    context = {"data": product}
+    return render(request, 'products/product_edit.html', context)
+
+def product_delete(request, id):
+    product = Product.objects.get(id=id)
+    product.delete()
+    return redirect("list-product")
