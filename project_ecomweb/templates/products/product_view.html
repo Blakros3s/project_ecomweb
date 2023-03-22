@@ -1,11 +1,30 @@
-{% extends 'layouts/master.html' %}
+{% extends "layouts/master.html" %}
 
 {% block title %}
-Product | VIEW
-{% endblock %}
+    Product | VIEW
+{% endblock title %}
 
 {% block content %}
-<div class="container">
-    <h1> This is Product View Page </h1>
-</div>
-{% endblock %}
+    <div class="container">
+        <h1>Product Detail</h1>
+        <hr>
+        <!-- breadcrump -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+              <li class="breadcrumb-item active"><a href="{% url 'list-product' %}">Products</a></li>
+              <li class="breadcrumb-item active">Product Detail</li>
+            </ol>
+        </nav>
+
+        <div class="card p-5">
+            <h1>{{ data.title }}</h1>
+            <h5>{{ data.desc }}</h5>
+            <h5>{{ data.category }}</h5>
+            <h5>{{ data.price }}</h5>
+            <h5>{{ data.quantity }}</h5>
+            <h5>{{ data.discount }}</h5>
+            <h5>{{ data.cod }}</h5>
+        </div>
+    </div>
+{% endblock content %}
