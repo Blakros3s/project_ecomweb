@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ecom/', include('app_ecom.urls')),
+    path('authentication/', include('authentication.urls')),
 ]
