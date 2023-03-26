@@ -20,23 +20,23 @@
                 {% csrf_token %}
                 <div class="form-group mb-3">
                     <label for="first_name">First Name</label>
-                    <input type="text" class="form-control mt-2" placeholder="First Name">
+                    <input type="text" name="first_name" class="form-control mt-2" placeholder="First Name">
                 </div>
                 <div class="form-group mb-3">
                     <label for="last_name">Last Name</label>
-                    <input type="text" class="form-control mt-2" placeholder="Last Name">
+                    <input type="text" name="last_name" class="form-control mt-2" placeholder="Last Name">
                 </div>
                 <div class="form-group mb-3">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control mt-2" placeholder="Email">
+                    <input type="email" name="email" class="form-control mt-2" placeholder="Email">
                 </div>
                 <div class="form-group mb-3">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control mt-2" placeholder="Username">
+                    <input type="text" name="username" class="form-control mt-2" placeholder="Username">
                 </div>
                 <div class="form-group mb-3">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control mt-2" placeholder="Password">
+                    <input type="password" name="password" class="form-control mt-2" placeholder="Password">
                 </div>
                 <input type="submit" value="REGISTER" class="btn btn-outline-success col-12 mb-4">
                 <h5>Already have an account? <a href="{% url 'login' %}">Click here</a></h5>
