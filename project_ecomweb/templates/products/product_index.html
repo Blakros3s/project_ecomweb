@@ -4,6 +4,8 @@
     Product | LIST
 {% endblock title %}
 
+{% load static %}
+
 {% block content %}
     <div class="container">
         <h1>Products</h1>
@@ -27,6 +29,7 @@
                         <th>Price</th>
                         <th>Category</th>
                         <th>Quantity</th>
+                        <th>Image</th>
                         <th colspan="3">Action</th>
                     </tr>
                 </thead>
@@ -38,6 +41,9 @@
                         <td>{{ val.price }}</td>
                         <td>{{ val.category }}</td>
                         <td>{{ val.quantity }}</td>
+                        {% if val.image %}
+                            <td><img src="{{ val.image.url }}" alt"" width="100" height="100"></td>
+                        {% endif %}
                         <td><a href="{% url 'view-product' val.id %}">View</a></td>
                         <td><a href="{% url 'edit-product' val.id %}">Edit</a></td>
                         <td><a href="{% url 'delete-product' val.id %}">Delete</a></td>
